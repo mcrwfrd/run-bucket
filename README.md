@@ -1,15 +1,18 @@
 # runBucket
 
-Paprplane is a super tiny web application for sending messages to your friends. Users can create accounts and send messages to their friends by indicating the correct username.
+runBucket helps you acheive your long-distance running goals by allowing you to record your runs and visualise your progress.
 
-Paprplane is a work in progress with many hurdles left to jump before it's production-ready:
+You can create an account, input the data for each run you complete (such as date, time, and distance), and visualise your achievement each day in a bar chart made with [chart.js](http://www.chartjs.org/).
 
-1. Change the database: Currently Paprplane uses a sqlite database, which I plan to migrate to PostgreSQL before taking this thing live.
-2. Improve aesthetics: Currently working with very minimal CSS so the app looks pretty bare-bones, especially the forms. Will probably integrate Bootstrap CSS.
-3. Validation Rules: Improve validation rules for email and other form inputs.
-4. Improve the name. There are alreay multiple messaging apps on the web working with some variation on the paper airplane theme.
+runBucket is a work in progress. The following things are next on my to-do list:
 
-Paprplane is not live yet. To check it out on Unix or Linux, follow these steps:
+1. Migrate from sqlite to MySQL
+1. Write unit tests
+2. Write error-catching code
+2. Set up a continuous integration testing environment using Docker
+3. Push to live server
+
+runBucket will eventually be a live applucation, but for now you'll have enjoy it locally. To check it out on Unix or Linux, follow these steps:
 
 1. Clone this repository to a local directory:
 
@@ -20,7 +23,7 @@ git clone https://github.com/mcrwfrd/runBucket.git
 2. Navigate to the cloned directory and install RunBucket as a Python package:
 
 ```bash
-cd paprplane
+cd runBucket
 export FLASK_APP=runBucket.py
 ```
 
