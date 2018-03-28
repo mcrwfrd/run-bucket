@@ -21,6 +21,7 @@ def before_request():
 
 
 @app.route('/')
+@app.route('/index')
 def welcome():
     return render_template('welcome.html')
 
