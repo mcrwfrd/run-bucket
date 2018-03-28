@@ -1,38 +1,14 @@
 from flask_wtf import Form
 from wtforms import StringField, PasswordField, SubmitField, DateField, DecimalField, TextAreaField
-from wtforms.validators import DataRequired, Email, EqualTo, Optional
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Optional
 from werkzeug import check_password_hash, generate_password_hash
+from app.models import User
+
 
 class UsernamePasswordForm(Form):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Sign In')
-
-#    def __init__(self, *args, **kwargs):
-#        Form.__init__(self, *args, **kwargs)
-#        self.user = None
-#
-#    def validate(self):
-#        rv = Form.validate(self)
-#        if not rv:
-#            return False
-#
-#        user = query_db('''select * from user where username = ?''',
-#                        [self.username.data],
-#                        one=True)
-#        if user is None:
-#            self.username.errors.append('Unknown username')
-#            return False
-#
-#        if not check_password_hash(user['pw_hash'], self.password.data):
-#            self.password.errors.append('Invalid password')
-#
-#        self.user = user
-#        return True
-
-
-
-
 
 
 class UsernameEmailPasswordForm(Form):
@@ -44,6 +20,12 @@ class UsernameEmailPasswordForm(Form):
     checkPassword = PasswordField('Repeat Password',
                                   validators=[DataRequired()])
     submit = SubmitField('Sign Up')
+
+    def validate_username(self, username):
+        existing_user = User.query.filter_by(username=self.username.data).first()
+        if existing_user is not None:
+            raise ValidationError('That usename is already taken! Please choose a different one.')
+
 
 class RunDistanceDateForm(Form):
     runName = StringField('Run Name', validators=[DataRequired()])

@@ -1,0 +1,33 @@
+2018-03-27 23:21:40,223 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-03-27 23:27:50,138 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-03-27 23:28:37,805 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-03-27 23:28:56,090 ERROR: Exception on /register [POST] [in /usr/local/lib/python3.5/dist-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/michael/Projects/runBucket/app/views.py", line 71, in register
+    if form.validate_on_submit():
+  File "/usr/local/lib/python3.5/dist-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/usr/local/lib/python3.5/dist-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/usr/local/lib/python3.5/dist-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/usr/local/lib/python3.5/dist-packages/wtforms/fields/core.py", line 204, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/usr/local/lib/python3.5/dist-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
+    validator(form, self)
+  File "/home/michael/Projects/runBucket/app/forms.py", line 24, in validate_username
+    existing_user = User.query.filter_by(username=self.username.data).first()
+NameError: name 'User' is not defined
+2018-03-27 23:29:39,464 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
