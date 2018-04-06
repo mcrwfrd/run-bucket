@@ -1,8 +1,8 @@
 # runBucket
 
-runBucket helps you acheive your long-distance running goals by allowing you to record your runs and visualise your progress.
+runBucket helps you acheive your long-distance running goals by allowing you to record your runs and visualize your progress.
 
-You can create an account, input the data for each run you complete (such as date, time, and distance), and visualise your achievement each day in a bar chart made with [chart.js](http://www.chartjs.org/).
+You can create an account, input the data for each run you complete (such as date, time, and distance), and visualize your achievement each day in a bar chart made with [chart.js](http://www.chartjs.org/).
 
 runBucket is a work in progress. The following things are next on my to-do list:
 
