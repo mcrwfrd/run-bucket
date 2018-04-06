@@ -6,7 +6,7 @@ You can create an account, input the data for each run you complete (such as dat
 
 runBucket is a work in progress. The following things are next on my to-do list:
 
-1. Migrate from sqlite to MySQL
+1. ~~Migrate from sqlite to MySQL~~ :heavy_check_mark:
 1. Write unit tests
 2. Write error-catching code
 2. Set up a continuous integration testing environment using Docker

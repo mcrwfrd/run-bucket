@@ -31,3 +31,203 @@ Traceback (most recent call last):
     existing_user = User.query.filter_by(username=self.username.data).first()
 NameError: name 'User' is not defined
 2018-03-27 23:29:39,464 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:13:52,792 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:29:49,911 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:29:57,231 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:30:48,597 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:33:27,099 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:36:06,502 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:50:00,114 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:51:23,681 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:51:42,870 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 21:57:11,236 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:00:47,321 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:05:41,840 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:09:53,884 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:10:13,170 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:11:39,162 ERROR: Exception on /login [POST] [in /usr/local/lib/python3.5/dist-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/cursors.py", line 165, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/cursors.py", line 321, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1061, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'app.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/michael/Projects/runBucket/app/views.py", line 88, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/query.py", line 2778, in first
+    ret = list(self[0:1])
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/query.py", line 2570, in __getitem__
+    return list(res)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/query.py", line 2878, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/query.py", line 2901, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/cursors.py", line 165, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/cursors.py", line 321, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1061, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'app.user' doesn't exist") [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash \nFROM user \nWHERE user.username = %(username_1)s \n LIMIT %(param_1)s'] [parameters: {'username_1': 'admin', 'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
+2018-04-05 22:13:49,503 ERROR: Exception on /register [POST] [in /usr/local/lib/python3.5/dist-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/cursors.py", line 165, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/cursors.py", line 321, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1061, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'app.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/michael/Projects/runBucket/app/views.py", line 71, in register
+    if form.validate_on_submit():
+  File "/usr/local/lib/python3.5/dist-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/usr/local/lib/python3.5/dist-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/usr/local/lib/python3.5/dist-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/usr/local/lib/python3.5/dist-packages/wtforms/fields/core.py", line 204, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/usr/local/lib/python3.5/dist-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
+    validator(form, self)
+  File "/home/michael/Projects/runBucket/app/forms.py", line 25, in validate_username
+    existing_user = User.query.filter_by(username=self.username.data).first()
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/query.py", line 2778, in first
+    ret = list(self[0:1])
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/query.py", line 2570, in __getitem__
+    return list(res)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/query.py", line 2878, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/query.py", line 2901, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/cursors.py", line 165, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/cursors.py", line 321, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1061, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'app.user' doesn't exist") [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash \nFROM user \nWHERE user.username = %(username_1)s \n LIMIT %(param_1)s'] [parameters: {'username_1': 'admin', 'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
+2018-04-05 22:36:54,943 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:37:13,275 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:41:34,065 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:43:23,157 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:43:28,237 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-05 22:44:00,158 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
