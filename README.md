@@ -32,6 +32,7 @@ export FLASK_APP=runBucket.py
 ```bash
 flask db init
 flask db migrate
+flask db upgrade
 ```
 
 4. Run the application:
