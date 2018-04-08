@@ -231,3 +231,163 @@ sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'a
 2018-04-05 22:43:23,157 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
 2018-04-05 22:43:28,237 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
 2018-04-05 22:44:00,158 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 16:37:30,963 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 16:40:58,720 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 17:25:25,812 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 17:25:59,259 ERROR: Exception on /login [POST] [in /usr/local/lib/python3.6/dist-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/util/_collections.py", line 999, in __call__
+    return self.registry[key]
+KeyError: 140478926993216
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/michael/Projects/runBucket/app/views.py", line 88, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/usr/local/lib/python3.6/dist-packages/flask_sqlalchemy/__init__.py", line 514, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/scoping.py", line 74, in __call__
+    return self.registry()
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/util/_collections.py", line 1001, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/session.py", line 2950, in __call__
+    return self.class_(**local_kw)
+  File "/usr/local/lib/python3.6/dist-packages/flask_sqlalchemy/__init__.py", line 143, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/usr/local/lib/python3.6/dist-packages/flask_sqlalchemy/__init__.py", line 877, in engine
+    return self.get_engine()
+  File "/usr/local/lib/python3.6/dist-packages/flask_sqlalchemy/__init__.py", line 896, in get_engine
+    return connector.get_engine()
+  File "/usr/local/lib/python3.6/dist-packages/flask_sqlalchemy/__init__.py", line 559, in get_engine
+    self._engine = rv = sqlalchemy.create_engine(info, **options)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/__init__.py", line 424, in create_engine
+    return strategy.create(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/strategies.py", line 81, in create
+    dbapi = dialect_cls.dbapi(**dbapi_args)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/dialects/mysql/pymysql.py", line 62, in dbapi
+    return __import__('pymysql')
+ModuleNotFoundError: No module named 'pymysql'
+2018-04-08 17:26:46,062 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 17:35:09,820 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 17:35:23,220 ERROR: Exception on /login [POST] [in /usr/local/lib/python3.6/dist-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/michael/Projects/runBucket/app/views.py", line 88, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 2789, in first
+    ret = list(self[0:1])
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 2581, in __getitem__
+    return list(res)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: ('admin', 1, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-04-08 17:36:12,474 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 17:36:19,105 ERROR: Exception on /login [POST] [in /usr/local/lib/python3.6/dist-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/michael/Projects/runBucket/app/views.py", line 88, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 2789, in first
+    ret = list(self[0:1])
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 2581, in __getitem__
+    return list(res)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: ('admin', 1, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-04-08 17:37:39,193 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 17:39:17,651 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 17:39:30,686 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]
+2018-04-08 17:40:22,210 INFO: runBucket startup [in /home/michael/Projects/runBucket/app/__init__.py:27]

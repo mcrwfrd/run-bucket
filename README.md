@@ -20,14 +20,21 @@ runBucket will eventually be a live application, but for now you'll have enjoy i
 git clone https://github.com/mcrwfrd/runBucket.git
 ```
 
-2. Navigate to the cloned directory and install RunBucket as a Python package:
+2. Create a virtual environment for this project:
 
 ```bash
-cd runBucket
+mkvirtualenv runBucket
+```
+
+2. Now that we're safely inside a virtual environment, navigate to the cloned directory, install the requirements and initiate the app in the FLASK_APP environment variable:
+
+```bash
+cd /.../path/to/runBucket
+pip3 install -r requirements.txt
 export FLASK_APP=runBucket.py
 ```
 
-3. Initlize the database migrations directory and execute initial migration:
+3. Initlize the database migrations directory and execute initial migration and upgrade:
 
 ```bash
 flask db init
@@ -35,7 +42,7 @@ flask db migrate
 flask db upgrade
 ```
 
-4. Run the application:
+4. Finally, run the application:
 
 ```bash
 flask run
