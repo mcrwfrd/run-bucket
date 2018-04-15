@@ -35,6 +35,8 @@ nosetests.xml
 .project
 .pydevproject
 
-venv
+logs/
+.env
 app.db
-microblog.log*
+certs/
+runbucket/
