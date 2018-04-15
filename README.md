@@ -8,7 +8,7 @@ runBucket is a work in progress. The following things are next on my to-do list:
 
 1. ~~Migrate from sqlite to MySQL~~ :heavy_check_mark:
 1. ~~Write unit tests~~ :heavy_check_mark: (ongoing)
-2. ~~Write error-catching code~~ :heavy_check_mark (ongoing)
+2. ~~Write error-catching code~~ :heavy_check_mark: (ongoing)
 2. Set up a continuous integration testing environment using Docker
 3. ~~Push to live server~~ :heavy_check_mark:
 
@@ -23,19 +23,19 @@ git clone https://github.com/mcrwfrd/runBucket.git
 ```bash
 mkvirtualenv runBucket
 ```
-2. Now that we're safely inside a virtual environment, navigate to the cloned directory, install the requirements and initiate the app in the FLASK_APP environment variable:
+3. Now that we're safely inside a virtual environment, navigate to the cloned directory, install the requirements and initiate the app in the FLASK_APP environment variable:
 ```bash
 cd /path/to/runBucket
 pip install -r requirements.txt
 export FLASK_APP=runBucket.py
 ```
-3. Initlize the database migrations directory and execute initial migration and upgrade:
+4. Initlize the database migrations directory and execute initial migration and upgrade:
 
 ```bash
 flask db init
 flask db upgrade
 ```
-4. Finally, run the application:
+5. Finally, run the application:
 ```bash
 flask run
 ```
