@@ -12,7 +12,7 @@ runBucket is a work in progress. The following things are next on my to-do list:
 2. Set up a continuous integration testing environment using Docker
 3. ~~Push to live server~~ :heavy_check_mark:
 
-runBucket will eventually be a live application, but for now you'll have enjoy it locally. To check it out on Unix or Linux, follow these steps:
+runBucket is now (unofficially) a live application, but if you'd like to tinker with it on your favourite Linux or Unix machine, follow these steps:
 
 1. Clone this repository to a local directory:
 ```bash
