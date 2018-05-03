@@ -19,7 +19,7 @@ class User(db.Model):
 class Run(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64))
-    distance = db.Column(db.Numeric)
+    distance = db.Column(db.Float)
     note = db.Column(db.Text)
     date = db.Column(db.Date)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)

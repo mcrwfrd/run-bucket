@@ -108,6 +108,7 @@ def newrun():
         abort(401)
     form = RunDistanceDateForm()
     if form.validate_on_submit():
+        print(form.runDistance.data)
         run = Run(name=form.runName.data,
                   distance=form.runDistance.data,
                   note=form.runComments.data,
