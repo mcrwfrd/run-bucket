@@ -1,5 +1,10 @@
 {% extends 'bootstrap/base.html' %}
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 {% block title %}
   Welcome | RunBucket
 {% endblock %}
@@ -28,6 +33,11 @@
         {% else %}
           <li class="active"><a href="{{ url_for('register') }}">Sign Up<span class="sr-only">(current)</span></a></li>
           <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if g.user %}
+          <li><a href="">{{ g.user.first().username }}</a></li>
         {% endif %}
       </ul>
     </div><!-- /.navbar-collapse -->
