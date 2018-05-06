@@ -21,6 +21,9 @@ def top():
         nav = Navbar(username,
                 View('Home', 'welcome'),
                 View('Dashboard', 'dashboard'),
+                View('New Run', 'newrun'),
+                View('Log Out', 'logout'),
+
               )
     else:
         nav = Navbar('',
