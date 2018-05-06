@@ -1,4 +1,33 @@
 {% extends 'layout.html' %}
 {% block app_content %}
-  <h2>RunBucket is a tiny web application built with <a href="http://flask.pocoo.org/">Flask</a> that helps runners set training goals and track their progress.</h2>
+  <div class="jumbotron">
+    <h1 class="text-center display-4">RunBucket</h1>
+    <p class="lead font-italic text-center">Meet your new favourite running coach</p>
+    <hr class="my-4">
+  <p>With RunBucket, runners can:</p>
+  <ul>
+    <li>Log the distance of each run</li>
+    <li>Visualize their training progress with interactive charts</li>
+    <li>Keep detailed notes about diet, injuries, and everything else along the way</li>
+  </ul>
+  <p>Future releases of RunBucket will include exciting features such as:</p>
+  <ul>
+    <li>Logging duration, vertical gain, and many other KPI's for each run</li>
+    <li>Sharing training progress with other runners</li>
+    <li>Setting KPI goals and tracking achievement</li>
+    <li>Support for recording KPIs in Imperial units</li>
+  </ul>
+  <hr class="my-4">
+  {% if not g.user %}
+    <p class="lead text-center">
+      <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Log In</a>
+      <a class="btn btn-primary btn-lg" href="{{ url_for('register') }}" role="button">Register</a>
+    </p>
+  {% else %}
+    <p class="lead text-center">
+      <a class="btn btn-primary btn-lg" href="{{ url_for('logout') }}" role="button">Log Out</a>
+    </p>
+  {% endif %}
+  </div>
+  <a href="https://github.com/mcrwfrd/runBucket" class="small">View on GitHub</a>
 {% endblock %}

@@ -1,36 +1,36 @@
-# runBucket
+# RunBucket
 
-runBucket helps you acheive your long-distance running goals by allowing you to record your runs and visualize your progress.
+RunBucket is a minimalist run tracker that helps runners achieve their long-distance running goals by allowing them to record their runs and visualize their progress.
 
-You can create an account, input the data for each run you complete (such as date, time, and distance), and visualize your achievement each day in a bar chart made with [chart.js](http://www.chartjs.org/).
+Runners can create an account, input the data for each run they complete (such as date, time, and distance), and visualize your achievement each day in an interactive bar chart.
 
-runBucket is a work in progress. The following things are next on my to-do list:
+### Tools
+RunBucket is written in Python3 using the [Flask microframework](http://flask.pocoo.org/). The interactive bar charts are rendered with [Chart.js](https://www.chartjs.org/). The front end is a simple mix of [Flask-Bootstrap](https://pythonhosted.org/Flask-Bootstrap/), [Flask-Nav](https://pythonhosted.org/flask-nav/getting-started.html) and [Flask-WTF](https://flask-wtf.readthedocs.io/en/stable/). The databases is a straightforward MySQL databases, although some day I'd like to experiment with NoSQL here. Finally, the projected is hosted on AWS EC2 using Gunicorn as the WSGI server and Nginx to serve requests to the app.
 
-1. ~~Migrate from sqlite to MySQL~~ :heavy_check_mark:
-1. ~~Write unit tests~~ :heavy_check_mark: (ongoing)
-2. ~~Write error-catching code~~ :heavy_check_mark: (ongoing)
-2. Set up a continuous integration testing environment using Docker
-3. ~~Push to live server~~ :heavy_check_mark:
+### Planned Features
+- Add more KPIs for runs such as duration and vertical gain
+- Sharing progress with other runners and tagging other runners that were with you on your run
+- Establishing KPI goals and tracking goal progress
+- Support for recording KPIs in Imperial units :us: (currently only logical measurement units are supported)
 
-runBucket is now (unofficially) a live application, but if you'd like to tinker with it on your favourite Linux or Unix machine, follow these steps:
+### Test Locally
 
+RunBucket is hosted live on AWS, but if you'd like to take it out for a spin on your local machine, the following instructions will help:
 1. Clone this repository to a local directory:
 ```bash
-git clone https://github.com/mcrwfrd/runBucket.git
+git clone git@github.com:mcrwfrd/runBucket.git
 ```
 2. Create a virtual environment for this project:
-
 ```bash
-mkvirtualenv runBucket
+virtualenv runBucket
 ```
 3. Now that we're safely inside a virtual environment, navigate to the cloned directory, install the requirements and initiate the app in the FLASK_APP environment variable:
 ```bash
 cd /path/to/runBucket
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 export FLASK_APP=runBucket.py
 ```
 4. Initlize the database migrations directory and execute initial migration and upgrade:
-
 ```bash
 flask db init
 flask db upgrade
