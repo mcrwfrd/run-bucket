@@ -4,6 +4,7 @@ import sqlite3
 import time
 from werkzeug import check_password_hash, generate_password_hash
 from flask_bootstrap import Bootstrap
+from flask_nav import Nav
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, _app_ctx_stack
 from io import BytesIO
 from sqlalchemy import func
