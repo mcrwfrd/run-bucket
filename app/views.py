@@ -5,12 +5,33 @@ import time
 from werkzeug import check_password_hash, generate_password_hash
 from flask_bootstrap import Bootstrap
 from flask_nav import Nav
+from flask_nav.elements import Navbar, View
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, _app_ctx_stack
 from io import BytesIO
 from sqlalchemy import func
-from app import app, db
+from app import app, db, nav
 from app.forms import UsernamePasswordForm, UsernameEmailPasswordForm, RunDistanceDateForm
 from app.models import User, Run
+
+
+@nav.navigation()
+def top():
+    if 'user_id' in session:
+        username = db.session.query(User.username).filter_by(id=session['user_id'])
+        nav = Navbar(username,
+                View('Home', 'welcome'),
+                View('Dashboard', 'dashboard'),
+              )
+    else:
+        nav = Navbar('',
+                View('Home', 'welcome'),
+                View('Log In', 'login'),
+                View('Register', 'register'),
+              )
+    return nav
+
+
+nav.register_element('top', top)
 
 
 @app.before_request
