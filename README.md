@@ -15,7 +15,7 @@ RunBucket is written in Python3 using the [Flask microframework](http://flask.po
 
 ### Test Locally
 
-RunBucket is hosted live on AWS, but if you'd like to take it out for a spin on your local machine, the following instructions will help:
+RunBucket was hosted live on AWS for a time, but I took it offline. If you'd like to take it out for a spin on your local machine, the following instructions will help:
 1. Clone this repository to a local directory:
 ```bash
 git clone git@github.com:mcrwfrd/runBucket.git
