@@ -24,6 +24,7 @@ git clone git@github.com:mcrwfrd/runbucket.git
 ```bash
 cd runbucket
 python3 -m venv venv
+. venv/bin/activate
 ```
 3. Now that we're safely inside a virtual environment, navigate to the cloned directory, install the requirements and initiate the app in the FLASK_APP environment variable:
 ```bash
