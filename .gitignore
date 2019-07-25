@@ -40,4 +40,4 @@ logs/
 .env
 app.db
 certs/
-runbucket/
+.DS_Store
