@@ -4,6 +4,9 @@ RunBucket is a minimalist run tracker that helps runners achieve their long-dist
 
 Runners can create an account, input the data for each run they complete (such as date, time, and distance), and visualize your achievement each day in an interactive bar chart.
 
+![landing page](https://raw.githubusercontent.com/mcrwfrd/runbucket/master/static/images/landing.png "Landing Page")
+![signup page](https://raw.githubusercontent.com/mcrwfrd/runbucket/master/static/images/singup.png "Sign Up")
+
 ### Tools
 RunBucket is written in Python3 using the [Flask microframework](http://flask.pocoo.org/). The interactive bar charts are rendered with [Chart.js](https://www.chartjs.org/). The front end is a simple mix of [Flask-Bootstrap](https://pythonhosted.org/Flask-Bootstrap/), [Flask-Nav](https://pythonhosted.org/flask-nav/getting-started.html) and [Flask-WTF](https://flask-wtf.readthedocs.io/en/stable/). The databases is a straightforward MySQL databases, although some day I'd like to experiment with NoSQL here. Finally, the project is hosted on AWS EC2 using Gunicorn as the WSGI server and Nginx to serve requests to the app.
 
