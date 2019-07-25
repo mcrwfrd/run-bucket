@@ -15,27 +15,23 @@ RunBucket is written in Python3 using the [Flask microframework](http://flask.po
 
 ### Test Locally
 
-RunBucket was hosted live on AWS for a time, but I took it offline. If you'd like to take it out for a spin on your local machine, the following instructions will help:
+RunBucket was hosted live on AWS for a time, but I took it offline. If you'd like to take it out for a spin on your local machine, the following instructions will get the homepage working for you.
 1. Clone this repository to a local directory:
 ```bash
-git clone git@github.com:mcrwfrd/runBucket.git
+git clone git@github.com:mcrwfrd/runbucket.git
 ```
 2. Create a virtual environment for this project:
 ```bash
-virtualenv runBucket
+cd runbucket
+python3 -m venv venv
 ```
 3. Now that we're safely inside a virtual environment, navigate to the cloned directory, install the requirements and initiate the app in the FLASK_APP environment variable:
 ```bash
-cd /path/to/runBucket
-pip3 install -r requirements.txt
-export FLASK_APP=runBucket.py
-```
-4. Initlize the database migrations directory and execute initial migration and upgrade:
-```bash
-flask db init
-flask db upgrade
+pip install -r requirements.txt
+export FLASK_APP=runbucket
 ```
 5. Finally, run the application:
 ```bash
 flask run
 ```
+This will get you as far as the langing page.
