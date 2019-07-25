@@ -30,8 +30,11 @@ python3 -m venv venv
 pip install -r requirements.txt
 export FLASK_APP=runbucket
 ```
+4. Create a basic environment file by copying the example given:
+```bash
+cp .env.example .env
+```
 5. Finally, run the application:
 ```bash
 flask run
 ```
-This will get you as far as the langing page.
